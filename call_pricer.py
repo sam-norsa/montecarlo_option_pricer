@@ -31,15 +31,13 @@ h = 0.1
 maturity = 100
 a = 0.8
 b = 0.1
-num_paths = 100  # Nombre de chemins simulés
+num_paths = 100
 
-# Simulation de plusieurs chemins
 plt.figure(figsize=(10, 5))
 for _ in range(num_paths):
     prices = sim_asset_price_path(S_0, mu, h, maturity, a, b)
-    plt.plot(range(maturity + 1), np.log(prices), linewidth=0.8, alpha=0.7)  # On affiche log(prices)
+    plt.plot(range(maturity + 1), np.log(prices), linewidth=0.8, alpha=0.7)
 
-# Affichage
 plt.title("Log Paths")
 plt.xlabel("Temps")
 plt.ylabel("Log(Prix)")
